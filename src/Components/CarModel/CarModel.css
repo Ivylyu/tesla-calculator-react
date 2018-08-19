@@ -1,0 +1,42 @@
+.tesla-car {
+    width: 100%;
+    min-height: 350px;
+    background-color: white;
+    background-image: url(../../assets/tesla.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.tesla-wheels {
+    height: 250px;
+    width: 555px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.tesla-wheel {
+    height: 80px;
+    width: 80px;
+    bottom: 0;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+}
+
+.tesla-wheel--front {
+    left: 54px;
+}
+
+.tesla-wheel--rear {
+    right: 70px;
+}
+
+.tesla-wheel--19 {
+    background-image: url(../../assets/wheel-19.png);
+}
+
+.tesla-wheel--21 {
+    background-image: url(../../assets/wheel-21.png);
+}
