@@ -3,8 +3,8 @@
     margin: 0 auto;
 }
 .panel-topic {
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
-        Roboto, 'Helvetica Neue', Arial, sans-serif;
+    /* font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, 'Helvetica Neue', Arial, sans-serif; */
     font-size: 50px;
     letter-spacing: 2px;
     text-align: center;

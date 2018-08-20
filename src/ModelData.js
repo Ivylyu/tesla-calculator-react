@@ -1,4 +1,4 @@
-const getModelData = () => {
+export function getModelData() {
     return {
         '60': {
             19: {
@@ -1285,6 +1285,4 @@ const getModelData = () => {
             }
         }
     };
-};
-
-export default getModelData;
+}

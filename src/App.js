@@ -14,15 +14,3 @@ class App extends Component {
     }
 }
 export default App;
-
-/* <App> -- Application entry point
- <Header></Header>
-  <TeslaBattery> -- Container
- 	<TeslaCar />     -- Presentational Component
- 	<TeslaStats />   -- Presentational Component 
- 	<TeslaCounter /> -- Presentational Component
- 	<TeslaClimate /> -- Presentational Component
- 	<TeslaWheels />  -- Presentational Component
- 	<TeslaNotice />  -- Presentational Component
-  </TeslaBattery>
-</App> */

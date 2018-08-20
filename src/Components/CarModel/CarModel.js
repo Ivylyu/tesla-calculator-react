@@ -1,22 +1,26 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import './CarModel.css';
 
 export default function CarModel(props) {
     return (
-        <div className="tesla-car">
-            <div className="tesla-wheels">
+        <div className="car-model">
+            <div className="car-model-wheels">
                 <div
-                    className={`tesla-wheel tesla-wheel--front tesla-wheel--${21}`}
+                    className={`car-model-wheels-wheel-front wheel-size-${
+                        props.wheelSize
+                    }`}
                 />
                 <div
-                    className={`tesla-wheel tesla-wheel--rear tesla-wheel--${19}`}
+                    className={`car-model-wheels-wheel-back wheel-size-${
+                        props.wheelSize
+                    }`}
                 />
             </div>
         </div>
     );
 }
 
-// CarModel.propTypes = {
-//     wheelsize: PropTypes.number
-// };
+CarModel.propTypes = {
+    wheelSize: PropTypes.number
+};
