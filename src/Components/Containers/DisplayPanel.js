@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import CarModel from '../CarModel/CarModel';
 import CarStates from '../CarStates/CarStates';
 import CarOptionPanel from '../CarOptionPanel/CarOptionPanel';
+import CarClimate from '../CarClimate/CarClimate';
+import CarWheels from '../CarWheels/CarWheels';
 import Notice from '../Notice/Notice';
 import { getModelData } from '../../ModelData';
 import './DisplayPanel.css';
@@ -37,7 +39,8 @@ class DisplayPanel extends Component {
         this.carStatesUpdate = this.carStatesUpdate.bind(this);
         this.increase = this.increase.bind(this);
         this.decrease = this.decrease.bind(this);
-        this.updateState = this.updateState.bind(this);
+        this.handleClimateChange = this.handleClimateChange.bind(this);
+        this.handleWheelsChange = this.handleWheelsChange.bind(this);
     }
 
     componentDidMount() {
@@ -63,7 +66,8 @@ class DisplayPanel extends Component {
         let currentOption;
         let maxValue;
         let step;
-        const { carConfig, DefaultOptions } = this.state;
+        const carConfig = { ...this.state.carConfig };
+        const { DefaultOptions } = this.state;
         if (title === 'Speed') {
             currentOption = carConfig.speed;
             maxValue = DefaultOptions.speedPart.max;
@@ -75,7 +79,12 @@ class DisplayPanel extends Component {
         }
         if (currentOption < maxValue) {
             const newValue = currentOption + step;
-            this.updateState(title, newValue);
+            title === 'Speed'
+                ? (carConfig['speed'] = newValue)
+                : (carConfig['temperature'] = newValue);
+            this.setState({ carConfig }, () => {
+                this.carStatesUpdate();
+            });
         }
         event.preventDefault();
     }
@@ -84,7 +93,8 @@ class DisplayPanel extends Component {
         let currentOption;
         let minValue;
         let step;
-        const { carConfig, DefaultOptions } = this.state;
+        const { DefaultOptions } = this.state;
+        const carConfig = { ...this.state.carConfig };
         if (title === 'Speed') {
             currentOption = carConfig.speed;
             minValue = DefaultOptions.speedPart.min;
@@ -96,39 +106,77 @@ class DisplayPanel extends Component {
         }
         if (currentOption > minValue) {
             const newValue = currentOption - step;
-            this.updateState(title, newValue);
+            title === 'Speed'
+                ? (carConfig['speed'] = newValue)
+                : (carConfig['temperature'] = newValue);
+            this.setState({ carConfig }, () => {
+                this.carStatesUpdate();
+            });
         }
         event.preventDefault();
     }
 
-    updateState(title, newValue) {
+    handleClimateChange() {
+        const { climate } = this.state.carConfig;
         const carConfig = { ...this.state.carConfig };
-        title === 'Speed'
-            ? (carConfig['speed'] = newValue)
-            : (carConfig['temperature'] = newValue);
-        this.setState({ carConfig });
+        carConfig.climate = !climate;
+        // carConfig['climate'] = !climate;
+        this.setState({ carConfig }, () => {
+            this.carStatesUpdate();
+        });
+    }
+
+    handleWheelsChange(size) {
+        const carConfig = { ...this.state.carConfig };
+        carConfig.wheelSize = size;
+        this.setState({ carConfig }, () => {
+            this.carStatesUpdate();
+        });
     }
 
     render() {
         const { carStates, carConfig, DefaultOptions } = this.state;
         return (
             <form className="display-panel">
-                <h1 className="panel-topic">Range Per Charge</h1>
+                <h1 className="display-panel-topic">Range Per Charge</h1>
                 <CarModel wheelSize={carConfig.wheelSize} />
-                <CarStates carStates={carStates} />
-                <CarOptionPanel
-                    currentOption={carConfig.speed}
-                    defaultOptions={DefaultOptions.speedPart}
-                    increase={this.increase}
-                    decrease={this.decrease}
-                />
-                <CarOptionPanel
-                    currentOption={carConfig.temperature}
-                    defaultOptions={DefaultOptions.tempPart}
-                    increase={this.increase}
-                    decrease={this.decrease}
-                />
-                <Notice />
+                <div className="display-panel-carStates">
+                    <CarStates carStates={carStates} />
+                </div>
+                <div className="display-panel-controller">
+                    <div className="display-panel-speed-panel">
+                        <CarOptionPanel
+                            currentOption={carConfig.speed}
+                            defaultOptions={DefaultOptions.speedPart}
+                            increase={this.increase}
+                            decrease={this.decrease}
+                        />
+                    </div>
+                    <div className="display-panel-temp-panel">
+                        <CarOptionPanel
+                            currentOption={carConfig.temperature}
+                            defaultOptions={DefaultOptions.tempPart}
+                            increase={this.increase}
+                            decrease={this.decrease}
+                        />
+                    </div>
+                    <div className="display-panel-car-climate">
+                        <CarClimate
+                            mode={carConfig.temperature > 10}
+                            climate={carConfig.climate}
+                            handleClimateChange={this.handleClimateChange}
+                        />
+                    </div>
+                    <div className="display-panel-car-wheels">
+                        <CarWheels
+                            wheelSize={carConfig.wheelSize}
+                            handleWheelsChange={this.handleWheelsChange}
+                        />
+                    </div>
+                </div>
+                <div className="display-panel-notice">
+                    <Notice />
+                </div>
             </form>
         );
     }

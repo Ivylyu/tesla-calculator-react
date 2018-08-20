@@ -1,0 +1,61 @@
+.wheels-selection {
+    width: 360px;
+    /* height: 120px; */
+    box-sizing: border-box;
+}
+
+.wheels-selection-title {
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 150;
+    margin-bottom: 10px;
+}
+
+.wheels-selection-form {
+    margin-top: 10px;
+    height: 67px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.wheels-item {
+    width: 45%;
+    border: 1px solid #ccc;
+    padding: 20px 0 0 90px;
+    margin: 0 8px 0 0;
+    background-color: #f7f7f7;
+    background-position: left 25% top 10px;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.wheels-item.size-19 {
+    background-image: url(../../assets/wheels/19.svg);
+}
+
+.wheels-item.size-21 {
+    background-image: url(../../assets/wheels/21.svg);
+}
+
+.wheels-item-active {
+    border-color: #39f;
+}
+
+.wheels-item p {
+    font-size: 25px;
+    font-weight: 400;
+    margin-left: 10%;
+}
+
+.wheels-item input[type='radio'] {
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    position: absolute;
+}

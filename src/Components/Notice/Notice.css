@@ -1,7 +1,10 @@
 .panel-notice {
-    margin: 20px 0;
-    font-size: 15px;
-    color: #666;
+    font-size: 12px;
+    color: rgba(180, 170, 170, 0.562);
     text-align: center;
-    /* line-height: 20px; */
+    font-weight: 100;
+}
+
+.panel-notice p {
+    margin: 0; 
 }
