@@ -1,5 +1,4 @@
 .car-states {
-    margin: -70px 0 30px;
     display: flex;
     justify-content: center;
 }
@@ -17,7 +16,7 @@
 }
 
 .car-states-ul-li-p {
-    margin-top: -5px;
+    margin-top: -3px;
     font-size: 40px;
     font-weight: normal;
     color: #008cffe3;

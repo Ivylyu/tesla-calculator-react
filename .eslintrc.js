@@ -10,8 +10,9 @@ module.exports = {
         // ReactDOM: false
     },
     rules: {
+
         // 这里填入你的项目需要的个性化配置，比如：
-        //
+        'no-unused-vars': [1, { vars: 'all', args: 'after-used' }],
         // // @fixable 一个缩进必须用两个空格替代
         // 'indent': [
         //     'error',
