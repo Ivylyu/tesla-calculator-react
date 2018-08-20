@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Panel from './Components/Containers/Panel';
+import DisplayPanel from './Components/Containers/DisplayPanel';
 import Header from './Components/Header/Header';
 import './App.css';
 
@@ -8,7 +8,7 @@ class App extends Component {
         return (
             <div>
                 <Header />
-                <Panel />
+                <DisplayPanel />
             </div>
         );
     }

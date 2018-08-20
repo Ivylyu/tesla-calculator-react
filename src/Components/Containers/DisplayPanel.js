@@ -3,9 +3,9 @@ import CarModel from '../CarModel/CarModel';
 import CarStates from '../CarStates/CarStates';
 import Notice from '../Notice/Notice';
 import { getModelData } from '../../ModelData';
-import './Panel.css';
+import './DisplayPanel.css';
 
-class Panel extends Component {
+class DisplayPanel extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -31,7 +31,9 @@ class Panel extends Component {
         const carStates = models.map(model => {
             const { speed, temperature, climate, wheelSize } = carConfig;
             const miles =
-                modelData[model][wheelSize][climate ? 'on' : 'off'].speed[speed][temperature];
+                modelData[model][wheelSize][climate ? 'on' : 'off'].speed[
+                    speed
+                ][temperature];
             return { model, miles };
         });
         this.setState({ carStates });
@@ -49,4 +51,4 @@ class Panel extends Component {
         );
     }
 }
-export default Panel;
+export default DisplayPanel;
