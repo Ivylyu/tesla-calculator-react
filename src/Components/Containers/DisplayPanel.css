@@ -1,0 +1,57 @@
+.display-panel {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.display-panel h1 {
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.display-panel-carStates {
+    margin-top: -70px;
+    margin-left: -110px;
+}
+
+.display-panel-topic {
+    font-size: 50px;
+    font-weight: 250;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.display-panel-controller {
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-panel-speed-panel {
+    margin-right: -47px;
+}
+
+.display-panel-temp-panel {
+    padding-left: 20px;
+    border-left: 1px solid #ccc;
+    margin-right: -50px;
+}
+
+.display-panel-car-climate {
+    margin-right: 18px;
+}
+
+.display-panel-car-wheels {
+    margin-left: -2px;
+    padding-bottom: 3px;
+}
+
+.display-panel-notice {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}

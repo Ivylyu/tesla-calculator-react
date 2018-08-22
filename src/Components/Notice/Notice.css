@@ -1,0 +1,10 @@
+.panel-notice {
+    font-size: 12px;
+    color: rgba(180, 170, 170, 0.562);
+    text-align: center;
+    font-weight: 100;
+}
+
+.panel-notice p {
+    margin: 0; 
+}

@@ -1,0 +1,59 @@
+.car-states {
+    display: flex;
+    justify-content: center;
+}
+
+.car-states-ul {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.car-states-ul-li {
+    display: flex;
+    flex-flow: column;
+    width: 150px;
+}
+
+.car-states-ul-li-p {
+    margin-top: -3px;
+    font-size: 40px;
+    font-weight: normal;
+    color: #008cffe3;
+    text-align: right;
+}
+
+.car-states-ul-li-p sup {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.tesla-model-icon {
+    height: 20px;
+    background-size: auto 13px;
+    background-position: top right;
+    background-repeat: no-repeat;
+}
+
+.icon-60 {
+    background-image: url(../../assets/models/60.svg);
+}
+
+.icon-60d {
+    background-image: url(../../assets/models/60d.svg);
+}
+
+.icon-75 {
+    background-image: url(../../assets/models/75.svg);
+}
+.icon-75d {
+    background-image: url(../../assets/models/75d.svg);
+}
+
+.icon-90d {
+    background-image: url(../../assets/models/90d.svg);
+}
+
+.icon-p100d {
+    background-image: url(../../assets/models/p100d.svg);
+}
